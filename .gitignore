@@ -1,1 +1,2 @@
+# * A rule to ignore all DS_Store folders in the project
 .DS_Store
