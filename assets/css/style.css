@@ -15,25 +15,27 @@
 
 @font-face {
   font-family: 'AlegreyaSans';
-  src: url(/assets/fonts/AlegreyaSans.woff2) format('woff2');
-  src: url(/assets/fonts/AlegreyaSans.ttf) format('truetype');
+  src: url('/assets/fonts/AlegreyaSans.woff2') format('woff2');
+  src: url('/assets/fonts/AlegreyaSans.ttf') format('truetype');
 }
 @font-face {
   font-family: 'AlegreyaSC';
-  src: url(/assets/fonts/AlegreyaSC.woff2) format('woff2');
-  src: url(/assets/fonts/AlegreyaSC.ttf) format('truetype');
+  src: url('/assets/fonts/AlegreyaSC.woff2') format('woff2');
+  src: url('/assets/fonts/AlegreyaSC.ttf') format('truetype');
 }
 @font-face {
   font-family: 'NixieOne';
-  /* src: url(/assets/fonts/NixieOne.woff2) format('woff2'); */
-  src: url(/assets/fonts/NixieOne.ttf) format('truetype');
+  src: url('/assets/fonts/NixieOne.woff2') format('woff2');
+  src: url('/assets/fonts/NixieOne.ttf') format('truetype');
 }
 
 /* - Global Variables */
 
 :root {
-  --white: #ffffff;
-  --black: #000000;
+  --global--paragraph--TextColor--light: #ffffff;
+  --global--paragraph--TextColor--dark: #6a6a6a;
+  --global--heading2--TextColor--light: #ffffff;
+  --global--heading2--TextColor--dark: #3a4f52;
 }
 
 /* - Classes */
@@ -77,8 +79,13 @@ html {
   font-size: 62.5;
 
   header {
-    background-image: url(/assets/img/header.png);
-    color: var(--white);
+    background-image: url('/assets/img/header.png');
+    color: var(--global--paragraph--TextColor--light);
+
+    h1 {
+      font-size: clamp(2rem, 4rem, 6rem);
+      font-weight: 500;
+    }
 
     p:nth-of-type(1) {
       font-size: clamp(3rem, 5.5rem, 8rem);
@@ -91,7 +98,16 @@ html {
     }
   }
 
-  main {
+  /* main {
     background-image: url(/assets/img/services.png);
+  } */
+
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    text-decoration: none !important;
+    color: inherit;
   }
 }
