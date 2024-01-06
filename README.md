@@ -1,3 +1,3 @@
 # SuperCode-NewInterior
 
-A little Frontend-Project after 14 Days of BootCamp
+A more advanced Frontend-Project after 14 Days at the SuperCode BootCamp.
