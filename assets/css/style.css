@@ -15,16 +15,25 @@
 
 @font-face {
   font-family: 'AlegreyaSans';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-stretch: 0% 200%;
   src: url('/assets/fonts/AlegreyaSans.woff2') format('woff2');
   src: url('/assets/fonts/AlegreyaSans.ttf') format('truetype');
 }
 @font-face {
   font-family: 'AlegreyaSC';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-stretch: 0% 200%;
   src: url('/assets/fonts/AlegreyaSC.woff2') format('woff2');
   src: url('/assets/fonts/AlegreyaSC.ttf') format('truetype');
 }
 @font-face {
   font-family: 'NixieOne';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-stretch: 0% 200%;
   src: url('/assets/fonts/NixieOne.woff2') format('woff2');
   src: url('/assets/fonts/NixieOne.ttf') format('truetype');
 }
@@ -32,6 +41,8 @@
 /* - Global Variables */
 
 :root {
+  --global--background--Color: #f1f0f0;
+  --global--link--Color: #4da7ca;
   --global--paragraph--TextColor--light: #ffffff;
   --global--paragraph--TextColor--dark: #6a6a6a;
   --global--heading2--TextColor--light: #ffffff;
@@ -65,7 +76,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  width: 100%;
+  width: 100vw;
   display: table;
   max-width: none;
   height: 100vh;
@@ -73,34 +84,66 @@
 
 /* - IDs */
 
-/* - Type Selectors */
+#header {
+  background-image: url('/assets/img/header.png');
+  color: var(--global--paragraph--TextColor--light);
 
-html {
-  font-size: 62.5;
-
-  header {
-    background-image: url('/assets/img/header.png');
-    color: var(--global--paragraph--TextColor--light);
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: clamp(1rem, 3rem, 5rem);
 
     h1 {
       font-size: clamp(2rem, 4rem, 6rem);
       font-weight: 500;
     }
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 clamp(30rem, 50rem, 70rem);
+    margin-top: clamp(30rem, 34rem, 70rem);
+    margin-bottom: clamp(30rem, 34rem, 70rem);
 
     p:nth-of-type(1) {
       font-size: clamp(3rem, 5.5rem, 8rem);
-      font-weight: 100;
+      font-weight: 400;
+      margin-bottom: clamp(0.5rem, 1.5rem, 2.5rem);
     }
 
     p:nth-of-type(2) {
       opacity: 0.5;
       font-size: clamp(1rem, 2.5rem, 4rem);
+      font-weight: 400;
     }
   }
+}
 
-  /* main {
-    background-image: url(/assets/img/services.png);
-  } */
+#portfolio {
+}
+
+#services {
+}
+
+#blog {
+}
+
+#parallax {
+}
+
+#testimonials {
+}
+
+#contact {
+}
+
+/* - Type Selectors */
+
+html {
+  font-size: 62.5%;
+  background-color: var(--global--background--Color);
 
   a,
   a:link,
@@ -108,6 +151,8 @@ html {
   a:hover,
   a:active {
     text-decoration: none !important;
-    color: inherit;
+    color: var(--global--link--Color); /* ! fallback color */
+    color: unset;
+    cursor: pointer;
   }
 }
